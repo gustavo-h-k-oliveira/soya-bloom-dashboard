@@ -35,29 +35,34 @@ export function DataChart({ data, dataKeys, colors, yAxisLabel }: DataChartProps
     <div className="h-80 w-full">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#d1d5db" />
           <XAxis 
             dataKey="time" 
-            stroke="#6b7280"
+            stroke="#374151"
             fontSize={12}
             tickLine={false}
           />
           <YAxis 
-            stroke="#6b7280"
+            stroke="#374151"
             fontSize={12}
             tickLine={false}
-            label={{ value: yAxisLabel, angle: -90, position: 'insideLeft' }}
+            label={{ value: yAxisLabel, angle: -90, position: 'insideLeft', style: { textAnchor: 'middle', fill: '#374151' } }}
           />
           <Tooltip 
             contentStyle={{
               backgroundColor: 'rgba(255, 255, 255, 0.95)',
               border: '1px solid #d1d5db',
               borderRadius: '8px',
-              backdropFilter: 'blur(4px)'
+              backdropFilter: 'blur(4px)',
+              color: '#374151'
             }}
             labelStyle={{ color: '#374151' }}
           />
-          <Legend />
+          <Legend 
+            wrapperStyle={{
+              color: '#374151'
+            }}
+          />
           {dataKeys.map((key, index) => (
             <Line
               key={key}

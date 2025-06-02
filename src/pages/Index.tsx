@@ -68,7 +68,7 @@ const Index = () => {
               <h1 className="text-4xl font-bold text-soy-green-800 mb-2">
                 Dashboard IoT - Cultivo de Soja
               </h1>
-              <p className="text-soy-green-600">
+              <p className="text-soy-green-700">
                 Monitoramento em tempo real das condições de cultivo
               </p>
             </div>
@@ -76,7 +76,7 @@ const Index = () => {
               <Badge variant={isOnline ? "default" : "destructive"} className="animate-pulse-slow">
                 {isOnline ? "Online" : "Offline"}
               </Badge>
-              <p className="text-sm text-soy-green-600">
+              <p className="text-sm text-soy-green-700">
                 Última atualização: {lastUpdate.toLocaleTimeString()}
               </p>
             </div>
@@ -157,7 +157,7 @@ const Index = () => {
               <Card className="bg-white/80 backdrop-blur-sm border-soy-green-200">
                 <CardHeader>
                   <CardTitle className="text-soy-green-800">Temperatura e Umidade</CardTitle>
-                  <CardDescription>Monitoramento das condições climáticas</CardDescription>
+                  <CardDescription className="text-soy-green-600">Monitoramento das condições climáticas</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <DataChart 
@@ -172,7 +172,7 @@ const Index = () => {
               <Card className="bg-white/80 backdrop-blur-sm border-soy-yellow-200">
                 <CardHeader>
                   <CardTitle className="text-soy-green-800">Umidade do Solo</CardTitle>
-                  <CardDescription>Controle da irrigação</CardDescription>
+                  <CardDescription className="text-soy-green-600">Controle da irrigação</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <DataChart 
@@ -187,7 +187,7 @@ const Index = () => {
               <Card className="bg-white/80 backdrop-blur-sm border-soy-green-200">
                 <CardHeader>
                   <CardTitle className="text-soy-green-800">Iluminância</CardTitle>
-                  <CardDescription>Intensidade luminosa ao longo do tempo</CardDescription>
+                  <CardDescription className="text-soy-green-600">Intensidade luminosa ao longo do tempo</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <DataChart 
@@ -202,7 +202,7 @@ const Index = () => {
               <Card className="bg-white/80 backdrop-blur-sm border-soy-yellow-200">
                 <CardHeader>
                   <CardTitle className="text-soy-green-800">Fotoperíodo</CardTitle>
-                  <CardDescription>Controle do ciclo de luz</CardDescription>
+                  <CardDescription className="text-soy-green-600">Controle do ciclo de luz</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <DataChart 
@@ -214,13 +214,24 @@ const Index = () => {
                 </CardContent>
               </Card>
             </div>
+
+            {/* Tabela de Dados Recentes */}
+            <Card className="bg-white/80 backdrop-blur-sm border-soy-green-200">
+              <CardHeader>
+                <CardTitle className="text-soy-green-800">Dados Mais Recentes</CardTitle>
+                <CardDescription className="text-soy-green-600">Últimas 10 leituras dos sensores</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <DataTable data={sensorData} />
+              </CardContent>
+            </Card>
           </TabsContent>
 
           <TabsContent value="table">
             <Card className="bg-white/80 backdrop-blur-sm border-soy-green-200">
               <CardHeader>
                 <CardTitle className="text-soy-green-800">Dados Históricos</CardTitle>
-                <CardDescription>Registros detalhados dos sensores</CardDescription>
+                <CardDescription className="text-soy-green-600">Registros detalhados dos sensores</CardDescription>
               </CardHeader>
               <CardContent>
                 <DataTable data={sensorData} />
