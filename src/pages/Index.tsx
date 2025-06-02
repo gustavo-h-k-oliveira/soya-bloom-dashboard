@@ -73,7 +73,10 @@ const Index = () => {
               </p>
             </div>
             <div className="flex items-center gap-4">
-              <Badge variant={isOnline ? "default" : "destructive"} className="animate-pulse-slow">
+              <Badge 
+                variant={isOnline ? "default" : "destructive"} 
+                className={`animate-pulse-slow ${isOnline ? "bg-soy-green-600 text-white hover:bg-soy-green-700" : ""}`}
+              >
                 {isOnline ? "Online" : "Offline"}
               </Badge>
               <p className="text-sm text-soy-green-700">
